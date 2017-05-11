@@ -1,0 +1,89 @@
+                    <!--
+<li><i class='fa fa-list'></i>All <span>12</span></li>
+<li><i class="fa fa-inbox"></i>Inbox <span>6</span></li>
+<li><i class="fa fa-list-alt"></i>Goceries <span>5</span></li>
+<li><i class="fa fa-list-alt"></i>Our Home <span>6</span></li>
+<li><i class="fa fa-list-alt"></i>Travel <span>7</span></li>
+<li class='active'><i class="fa fa-list-alt"></i>Work <span></span>8</li>
+<li><i class="fa fa-list-alt"></i>Travel Packing List <span>4</span></li>
+<li><i class="fa fa-list-alt"></i>Movies<span>8</span></li>
+<li><i class="fa fa-list-alt"></i>Kitchen Renovation <span>8</span></li>
+<li><i class="fa fa-list-alt"></i>TV show <span>2</span></li>
+<li><i class="fa fa-list-alt"></i>Conference call <span>12</span></li>
+-->
+
+
+<li>
+                    <i class="fa fa-trash-o"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo maxime, architecto tempora
+                    <input type="checkbox">
+                    <span class='date'>november 12, 2017</span>
+                </li>
+                <li>
+                    <i class="fa fa-trash-o"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo maxime, architecto tempora
+                    <span class='input-check'><input type="checkbox" ></span>
+                    <span class='date'>november 12, 2017</span>
+                </li>
+                <li>
+                    <i class="fa fa-trash-o"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo maxime, architecto tempora
+                    <span class='input-check'><input type="checkbox"></span>
+                    <span class='date'>november 12, 2017</span>
+                </li>
+                <li>
+                    <i class="fa fa-trash-o"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo maxime, architecto tempora
+                    <span class='input-check'><input type="checkbox"></span>
+                    <span class='date'>november 12, 2017</span>
+                </li>
+                <li>
+                    <i class="fa fa-trash-o"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo maxime, architecto tempora
+                    <span class='input-check'><input type="checkbox"></span>
+                    <span class='date'>november 12, 2017</span>
+                </li>
+                <li>
+                    <i class="fa fa-trash-o"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo maxime, architecto tempora
+                    <span class='input-check'><input type="checkbox"></span>
+                    <span class='date'>november 12, 2017</span>
+                </li>
+                <li>
+                    <i class="fa fa-trash-o"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo maxime, architecto tempora
+                    <span class='input-check'><input type="checkbox" ></span>
+                    <span class='date'>november 12, 2017</span>
+                </li>
+                <li>
+                    <i class="fa fa-trash-o"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo maxime, architecto tempora
+                    <span class='input-check'><input type="checkbox"></span>
+                    <span class='date'>november 12, 2017</span>
+                </li>
+                <li>
+                    <i class="fa fa-trash-o"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo maxime, architecto tempora
+
+                    <span class='input-check'><input type="checkbox" ></span>
+                    <span class='date'>november 12, 2017</span>
+
+                </li>
+                
+                
+                
+                
+                             var inputText = value.text;
+               var status = value.status;
+               var listItem = new List(inputText, status);
+               $('#list-panel').append($(listItem.show()));
+               
+               
+               
+               
+               
+                     this.saveAndUpdate = function (obj) {
+         var jsonData = this.getData();
+         jsonData.push(obj);
+         var data = JSON.stringify(jsonData);
+         $.ajax({
+            url: "https://api.myjson.com/bins/gna0r",
+            type: "PUT",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data, textStatus, jqXHR) {
+               console.log(data);
+            }
+         })
+      }

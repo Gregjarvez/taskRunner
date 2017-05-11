@@ -13,3 +13,16 @@
 @mixin padding {
     padding: 12px 12px;
 }
+
+@mixin h2 {
+    color: #fff;
+    font-size: (1em + 0.5em);
+    font-weight: $font-weight;
+    letter-spacing: $letter-spacing;
+    -webkit-font-smoothing: antialiased;
+    transition: all .4s ease-in-out;
+}
+
+@mixin font-smoothing {
+    -webkit-font-smoothing: antialiased;
+}
