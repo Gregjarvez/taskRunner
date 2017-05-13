@@ -115,18 +115,29 @@
     	@include padding;
     	text-align: center;
     	background: $transWhite;
-    	overflow: hidden;
+    	position: relative;
     	i {
-    		font-size: 2em;
-    		padding: 5px;
+    		position: absolute;
+    		top: 50%;
+    		left: 50%;
+    		transform: translate(-50%, 0%);
+    		color: $wine;
+    		font-size: 2.4em;
+    		font-weight: $font-weight;
+    		cursor: pointer;
+    	}
+    	input {
+    		background: rgba(90, 88, 88, 0.53);
+    		width: 90%;
+    		padding: 7px;
+    		outline: none;
+    		border: 0;
     		color: white;
-    		border: 4px solid white;
-    		border-radius: 100%;
-    		transition: .4s ease;
-    		transform: translateY(10px);
-    		&:hover {
-    			box-shadow: -16px 8px 24px 2px rgba(0, 0, 0, 0.14), -6px 6px 30px 5px rgba(0, 0, 0, 0.12), -8px 0px 10px -5px rgba(0, 0, 0, 0.3);
-    		}
+    		font-size: 1.1em;
+    		border-radius: 5px;
+    		text-transform: capitalize;
+    		transition: opacity .6s ease;
+    		@include font-smoothing;
     	}
     }
     
@@ -220,6 +231,13 @@
     				text-transform: capitalize;
     				@include clearfix;
     				overflow: visible;
+    			}
+    			i#reminder {
+    				background: #52e852;
+    				color: white;
+    				font-size: 1.5em;
+    				margin-right: 5px;
+    				padding: inherit;
     			}
     		}
     		li:nth-child(even) {

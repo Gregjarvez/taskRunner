@@ -178,10 +178,11 @@ var Data_ObjMod = (function () {
 			if (data.categories.hasOwnProperty(type)) {
 				data.categories[type].push(obj);
 			} else {
-
-				//if no create it and push
 				data.categories[type] = [];
-				data.categories[type].push(obj);
+				if (obj !== null) {
+					data.categories[type].push(obj);
+
+				}
 			}
 		},
 		log: function () {
@@ -213,7 +214,7 @@ var Data_ObjMod = (function () {
 
 				}
 			});
-			return array;
+			return array.reverse();
 		},
 		//return the length of every Category in an array
 		data: function () {
@@ -291,7 +292,9 @@ var UIController = (function () {
 		date: '.date > h3',
 		span: '#categories li > span',
 		checkbox: '#listPanel li > input[type=checkbox]',
-		complete: '#completed'
+		complete: '#completed',
+		add: '#add_button',
+		subInput: '.category_add'
 	}
 
 
@@ -317,9 +320,9 @@ var UIController = (function () {
 			};
 		},
 		//CLEARS INPUT
-		clearfield: function () {
-			selector(DOM.input).value = '';
-			selector(DOM.input).focus();
+		clearfield: function (e) {
+			e.value = '';
+			e.focus();
 		},
 		//GETS AN OBJECTS FROM createListNode AND CREATES AN HTML ELEMENT
 		addList: function (obj) {
@@ -369,7 +372,6 @@ var UIController = (function () {
 
 			return split[0];
 
-
 		},
 		//add active class on click
 		addActiveClass: function (current) {
@@ -403,7 +405,7 @@ var UIController = (function () {
 
 		//takes the data category array
 		//creates an creates html elements from each object
-		//append it to the right categry
+		//append it to the right category
 		addSubset: function (arr) {
 
 			var data, html, obj;
@@ -492,6 +494,19 @@ var UIController = (function () {
 		},
 		completed: function (num) {
 			selector(DOM.complete).textContent = num;
+		},
+		getText: function () {
+			return selector(DOM.subInput).value;
+		},
+		updateCategory: function (name) {
+			var str, html;
+
+			str = '<li><i class="fa fa-list-alt"></i>%name% &#8194;<span>0</span></li>';
+
+			html = str.replace('%name%', name);
+
+			selector(DOM.categories).insertAdjacentHTML('beforeend', html);
+
 		}
 	}
 }());
@@ -502,6 +517,7 @@ var UIController = (function () {
 
 var App_Ctrl = (function (Data_ObjMod, UIController) {
 
+	var drag = null;
 	//************************************************************************************
 	// event helper functions starts
 	//*************************************************************************************
@@ -578,6 +594,11 @@ var App_Ctrl = (function (Data_ObjMod, UIController) {
 		selector(UIController.ids.complete).innerHTML = Data_ObjMod.completedTask()
 	}
 
+	function trimmed(data) {
+		return data.trim();
+	}
+
+
 	//************************************************************************************
 	// event helper functions ends
 	//*************************************************************************************
@@ -595,7 +616,7 @@ var App_Ctrl = (function (Data_ObjMod, UIController) {
 			inputData = UIController.getInputData();
 
 			//clearinput and focus 
-			UIController.clearfield();
+			UIController.clearfield(e.target);
 
 			//get all li in categories
 			//and return a formated version of the name of the li with the ctive class
@@ -660,7 +681,7 @@ var App_Ctrl = (function (Data_ObjMod, UIController) {
 
 		var target, id, li, datatype, inputParent, state = false;
 
-		target = e.target
+		target = e.target;
 
 		datatype = retrieveClass();
 
@@ -692,6 +713,24 @@ var App_Ctrl = (function (Data_ObjMod, UIController) {
 		}
 	}
 
+	var addToCat = function (e) {
+		var inputData, refined, target, withclass;
+
+		target = e.target;
+
+		if (e.keyCode === 13) {
+			inputData = UIController.getText();
+
+			refined = trimmed(inputData);
+
+			UIController.updateCategory(refined);
+
+
+			UIController.clearfield(target);
+		}
+
+	}
+
 	//************************************************************************************
 	// event handler functions ends
 	//*************************************************************************************
@@ -700,10 +739,13 @@ var App_Ctrl = (function (Data_ObjMod, UIController) {
 	function setUpEventListeners() {
 		selector(UIController.ids.input).addEventListener('keypress', getValue);
 		selector(UIController.ids.categories).addEventListener('click', getItems);
-		document.addEventListener('click', delete_Status_Update)
+		document.addEventListener('click', delete_Status_Update);
+		selector(UIController.ids.subInput).addEventListener('keypress', addToCat);
+		selector(UIController.ids.add).addEventListener('click', function () {
+			$(".category_add").slideToggle();
+		})
+
 	}
-
-
 
 	return {
 		init: function () {
@@ -713,6 +755,7 @@ var App_Ctrl = (function (Data_ObjMod, UIController) {
 			UIController.getTaskName();
 			selector(UIController.ids.date).innerHTML = UIController.date();
 			completeTask();
+			$(".category_add").hide();
 		}
 	}
 

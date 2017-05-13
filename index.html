@@ -23,14 +23,19 @@
 				<h2>categories</h2>
 				<ul class="categories-item" id='categories'>
 					<li class="active"><i class='fa fa-list'></i>All <span>12</span></li>
-					<li><i class="fa fa-inbox"></i>Inbox <span>63</span></li>
+					<li><i class="fa fa-inbox"></i>Task <span>63</span></li>
 					<li><i class="fa fa-list-alt"></i>Groceries <span>5</span></li>
 					<li><i class="fa fa-list-alt"></i>Our Home <span>6</span></li>
 
 				</ul>
 			</div>
+
 			<div class="add-button">
-				<i class="fa fa-plus"></i>
+				<input type="text" class="category_add">
+
+				<i class="fa fa-plus-circle" id='add_button'></i>
+
+
 			</div>
 		</div>
 
@@ -39,6 +44,12 @@
 			<input type="text" placeholder="add item to Work" id="main-input">
 
 			<ul class="list" id="listPanel">
+				<li>
+					<i class="fa fa-trash-o"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo maxime, architecto tempora
+					<span class='input-check'><input type="checkbox"></span>
+					<span class='date'>november 12, 2017</span>
+					<i class="fa fa-plus-square-o" aria-hidden="true" id='reminder'></i>
+				</li>
 
 			</ul>
 
@@ -47,7 +58,6 @@
 
 			</div>
 		</div>
-
 
 		<div class="sub-menu">
 			<ul class="reminder">
