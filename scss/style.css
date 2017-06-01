@@ -1,17 +1,14 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 ::-webkit-scrollbar {
-  width: 5px;
- }
+  width: 5px; }
 
 ::-webkit-scrollbar-track {
   background: transparent;
-  border-radius: 10px;
- }
+  border-radius: 10px; }
 
 ::-webkit-scrollbar-thumb {
   background: rgba(232, 219, 194, 0.35);
@@ -65,9 +62,9 @@ body {
 .menu-slider {
   width: 25%;
   height: 100%;
-  background: #353440;
+  background: #FAFAFA;
   z-index: 2;
-  border: 1px solid #353440;
+  border: 1px solid #FAFAFA;
   box-shadow: 16px 0px 24px 2px rgba(0, 0, 0, 0.14), 6px 0px 30px 5px rgba(0, 0, 0, 0.12), 8px 0px 10px -5px rgba(0, 0, 0, 0.3); }
 
 .profile {
@@ -116,7 +113,7 @@ body {
     text-align: left;
     text-transform: uppercase;
     cursor: pointer;
-    border-bottom: 1px solid #353440;
+    border-bottom: 1px solid #FAFAFA;
     margin-bottom: 5px; }
   .category ul {
     display: block;
@@ -144,7 +141,6 @@ body {
         margin-right: 5px; }
       .category ul li span {
         float: right;
-        pointer-events: none;
         overflow: auto; }
         .category ul li span::after {
           content: "";
@@ -216,8 +212,8 @@ body {
     text-transform: capitalize;
     -webkit-font-smoothing: antialiased; }
     .main-ui input[type="text"]:focus {
-      outline: #353440;
-      border: 1px solid #646278; }
+      outline: #FAFAFA;
+      border: 1px solid white; }
   .main-ui .list {
     width: 100%;
     height: 72%;
@@ -236,7 +232,7 @@ body {
       font-size: 1em;
       font-weight: 300;
       margin: 10px 0;
-      border-bottom: 1px solid #353440;
+      border-bottom: 1px solid #FAFAFA;
       background: rgba(51, 51, 51, 0.29);
       letter-spacing: 1px;
       padding: 12px 12px;
@@ -262,7 +258,7 @@ body {
           .main-ui .list li span#removeIcon i:nth-child(2) {
             background: rgba(47, 211, 92, 0.73); }
             .main-ui .list li span#removeIcon i:nth-child(2):hover {
-              background: rgba(33, 94, 50, 0.9); }
+              background: rgba(47, 211, 92, 0.85); }
       .main-ui .list li .date {
         display: block !important;
         font-size: .7em;
@@ -285,7 +281,7 @@ body {
     height: 8%;
     margin: 0px;
     padding: 12px 12px;
-    background: #353440; }
+    background: #FAFAFA; }
     .main-ui .completed p {
       font-size: 1.0em;
       letter-spacing: 2px;
@@ -295,9 +291,9 @@ body {
 .sub-menu {
   width: 25%;
   height: 100%;
-  background: #353440;
+  background: #FAFAFA;
   z-index: 2;
-  border: 1px solid #353440;
+  border: 1px solid #FAFAFA;
   box-shadow: -16px 0px 24px 2px rgba(0, 0, 0, 0.14), -6px 0px 30px 5px rgba(0, 0, 0, 0.12), -8px 0px 10px -5px rgba(0, 0, 0, 0.3); }
   .sub-menu h2 {
     color: #fff;
@@ -337,7 +333,45 @@ body {
         border-right: 1px solid rgba(224, 223, 223, 0.34); }
         .sub-menu .reminder li i:hover {
           background: rgba(232, 219, 194, 0.35);
-          color: #353440; }
+          color: #FAFAFA; }
+  .sub-menu .weather {
+    width: 100%;
+    height: auto;
+    background: rgba(224, 223, 223, 0.34);
+    margin-top: 10px;
+    padding: 12px 12px; }
+  .sub-menu .location {
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: 300;
+    letter-spacing: 2px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    text-align: center;
+    font-size: 1.2em;
+    display: block; }
+  .sub-menu .temperature {
+    width: 100%;
+    height: auto;
+    color: white;
+    text-align: center;
+    font-weight: 300;
+    font-size: 3em; }
+  .sub-menu img {
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto; }
+  .sub-menu .description {
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 12px 12px;
+    font-weight: 300;
+    font-size: .9em;
+    letter-spacing: 2px;
+    -webkit-font-smoothing: antialiased; }
 
 #completed {
   font-size: 1.2em; }
@@ -352,9 +386,9 @@ body {
   cursor: pointer; }
   .context-menu li {
     padding: 5px;
-    border-bottom: 1px solid #b4b2c1; }
+    border-bottom: 1px solid white; }
     .context-menu li:hover {
-      background: #7c7a93;
+      background: white;
       color: white; }
     .context-menu li:last-child:hover {
       background: #d65f5f;
