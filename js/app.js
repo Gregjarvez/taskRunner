@@ -591,7 +591,7 @@ var App_Ctrl = ( function( Data_ObjMod, UIController ) {
 	}
 
 	function toggleMenu( fn ) {
-		var menu, height, width;
+		var menu;
 
 		menu = selector( UIController.ids.menu );
 		menu.style.top = fn.top + 'px';
